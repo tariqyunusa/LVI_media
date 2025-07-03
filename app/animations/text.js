@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
-export const splitText = () => {
+export const split = () => {
     const paragraph = document.querySelectorAll("[data-animation='paragraph']")
     const sideHeader = document.querySelectorAll("[data-animation='side-header']")
 
@@ -30,7 +30,7 @@ export const splitText = () => {
                 opacity: 1,
                 stagger: element.length > 100 ? 0.02 : 0.03,
                 duration: element.length > 100 ? 0.65 : 0.75,
-                ease: "power2.out"
+                ease: "power4.out"
             })
         })
     })
@@ -52,7 +52,7 @@ export const splitText = () => {
                 xPercent: 0,
                 stagger: element.length > 100 ? 0.01 : 0.02,
                 duration: element.length > 100 ? 0.5 : 0.6,
-                ease: "power2.out"
+                ease: "power4.out"
             })
         })
     })

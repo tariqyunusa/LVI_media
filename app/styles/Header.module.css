@@ -1,0 +1,44 @@
+.nav__header{
+    width: 100vw;
+    height: 10vh;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-inline: 2rem;
+}
+.logo{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+}
+.FPS{
+    font-family: var(--font-space-mono);
+}
+.nav__inner_menu{
+    font-family: var(--font-manrope);
+    text-transform: uppercase;
+    color: #080808;
+    font-weight: 400;
+    font-size: 1rem;
+
+}
+.nav__cta_menu{
+    border-radius: 56px;
+    border: 1px solid #080808;
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+.indicator{
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #FF0000;
+    border-radius: 50%;
+}

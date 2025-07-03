@@ -2,6 +2,7 @@ import { IO } from "./observe";
 import gsap from "gsap";
 
 export const revealImage = () => {
+     if (typeof window === "undefined") return;
     const images = document.querySelectorAll("[data-animation='image']");
     images.forEach((item) => {
         gsap.set(item, {
@@ -14,7 +15,7 @@ export const revealImage = () => {
                 yPercent: 0,
                 scale: 1,
                 duration: 0.6,
-                ease: "power2.out",
+                ease: "power4.out",
             })
         })
     })
