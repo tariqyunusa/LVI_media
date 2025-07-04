@@ -5,6 +5,7 @@ import { useState } from "react";
 import Infused from "./sections/Infused";
 import About from "./sections/About";
 import Services from "./sections/Services";
+import Marquee from "./components/Marquee";
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
     <Infused />
     <About />
     <Services />
+    <Marquee />
    </>
   );
 }
