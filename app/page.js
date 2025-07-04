@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import Infused from "./sections/Infused";
 import About from "./sections/About";
+import Services from "./sections/Services";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
    </section>
     <Infused />
     <About />
+    <Services />
    </>
   );
 }
