@@ -1,14 +1,20 @@
 "use client";
 
 import { useEffect } from "react";
-import { split } from "../animations/text";
-import { revealImage } from "../animations/image";
+import dynamic from "next/dynamic";
 
 export default function ClientWrapper({ children }) {
   useEffect(() => {
-    split();
-    revealImage();
+    const runAnimations = async () => {
+      const { split } = await import("../animations/text");
+      const { revealImage } = await import("../animations/image");
+
+      split();
+      revealImage();
+    };
+
+    runAnimations();
   }, []);
 
   return <>{children}</>;
-}  
+}

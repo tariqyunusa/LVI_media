@@ -3,3 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+.text__mask {
+  display: block;
+  overflow: hidden;
+}
+
+.word {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  will-change: transform, opacity;
+  white-space: pre;
+}
+
+body{
+    overflow-x: hidden;
+}

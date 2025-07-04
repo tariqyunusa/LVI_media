@@ -2,6 +2,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useState } from "react";
+import Infused from "./sections/Infused";
+import About from "./sections/About";
 
 
 export default function Home() {
@@ -10,17 +12,18 @@ export default function Home() {
    <>
    <section className={styles.hero}>
     <main className={styles.hero__main}>
-      <h1 className={styles.hero__headline}>
+      <h1 className={styles.hero__headline} >
         We make cool videos for sport brands around the world <span /> 
       </h1>
     </main>
     <div className={styles.hero__footer}>
-      <p className={styles.white__balance}>WB: 5500</p>
+      <p className={styles.white__balance}>SHUTTER: 100</p>
       <p className={styles.scroll__indicator}>Scroll to explore</p>
       <div className={styles.audio__toggle}> <p className={styles.audio__indicator} >Audio:</p>  <button className={styles.audio__toggle_main}>{audio}</button></div>
     </div>
    </section>
-
+    <Infused />
+    <About />
    </>
   );
 }

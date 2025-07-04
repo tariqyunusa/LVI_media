@@ -24,7 +24,7 @@ export const split = () => {
             transformStyle: "preserve-3d"
         });
         IO(item, { threshold: 0.8 }).then(() => {
-            const element = document.querySelectorAll(".word");
+            const element = item.querySelectorAll(".word");
             gsap.to(element, {
                 yPercent: 0,
                 opacity: 1,

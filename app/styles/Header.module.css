@@ -9,6 +9,7 @@
     top: 0;
     left: 0;
     padding-inline: 2rem;
+    z-index: 10;
 }
 .logo{
     width: 2.5rem;

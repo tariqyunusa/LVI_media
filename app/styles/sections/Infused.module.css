@@ -1,0 +1,11 @@
+.infused{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding: 2rem;
+}
+.infused img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
