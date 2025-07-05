@@ -1,16 +1,19 @@
 "use client"
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import Infused from "./sections/Infused";
 import About from "./sections/About";
 import Services from "./sections/Services";
 import Marquee from "./components/Marquee";
-import Footer from "./sections/Footer";
+
+
 
 
 export default function Home() {
   const [audio, setAudio] = useState("off")
+
+
   return (
    <>
    <section className={styles.hero}>
@@ -29,7 +32,6 @@ export default function Home() {
     <About />
     <Services />
     <Marquee />
-    <Footer />
    </>
   );
 }

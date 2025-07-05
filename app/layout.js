@@ -3,6 +3,7 @@ import "./globals.css";
 import ClientWrapper from "./components/ClientWrapper";
 import Header from "./components/Header";
 import localFont from 'next/font/local'
+import Footer from "./sections/Footer";
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
       <body className={`${spaceMono.variable} ${manrope.variable} ${schabo.variable}`}>
         <Header />
        <ClientWrapper> {children}</ClientWrapper>
+       <Footer />
       </body>
     </html>
   );
