@@ -1,0 +1,107 @@
+.footer{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.headline_header{
+    font-family: var(--font-schabo);
+    font-weight: 400;
+    font-size: 8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+.headline_link{
+     font-family: var(--font-schabo);
+     font-weight: 400;
+    font-size: 8rem;
+    text-align: center;
+    text-transform: uppercase;
+   
+}
+.headline_link a{
+    color: #FF3104;
+}
+.footer__headline{
+    width: 839px;
+}
+.footer__main_first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8.5rem;
+}
+.footer__main__links_first{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: var(--font-manrope);
+    color: #080808;
+}
+
+.footer__first_routes{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__routes_sections{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.footer__main__links_second{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+.footer__socials{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.footer__routes_sections a{
+    color: #080808;
+    text-decoration: none;
+}
+.footer__socials a{
+      color: #080808;
+    text-decoration: none; 
+}
+.BTP a{
+    color: #080808;
+ }
+.footer__main_second{
+    height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  
+}
+.footer__main_contact{
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-manrope);
+    font-weight: 400;
+    font-size: 3.475rem;
+}
+.footer__main_contact p{
+    width: 555px;
+    /* white-space: nowrap; */
+}
+.footer__main_footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.footer__main_second_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.footer__main_footer p{
+     font-family: var(--font-manrope);
+    font-weight: 400;
+    color: #616161;
+}

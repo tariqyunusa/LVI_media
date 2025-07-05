@@ -6,6 +6,7 @@ import Infused from "./sections/Infused";
 import About from "./sections/About";
 import Services from "./sections/Services";
 import Marquee from "./components/Marquee";
+import Footer from "./sections/Footer";
 
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
     <About />
     <Services />
     <Marquee />
+    <Footer />
    </>
   );
 }
