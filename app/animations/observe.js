@@ -1,14 +1,13 @@
-export const IO = (item, options) => {
+export const IO = (element, options = {}) => {
   return new Promise((resolve) => {
-    const observer = new window.IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          resolve(); 
-          observer.unobserve(item); 
+          resolve(entry.target); 
+          observer.unobserve(entry.target); 
         }
       });
     }, options);
-
-    observer.observe(item);
+    observer.observe(element);
   });
 };

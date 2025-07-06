@@ -1,22 +1,28 @@
-import { IO } from "./observe";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export const revealImage = () => {
-     if (typeof window === "undefined") return;
-    const images = document.querySelectorAll("[data-animation='image']");
-    images.forEach((item) => {
-        gsap.set(item, {
-            yPercent: 100,
-            scale: 0.7,
-            transformStyle: "preserve-3d"
-        })
-        IO(item, {threshold: 0.8}).then(() => {
-            gsap.to(item, {
-                yPercent: 0,
-                scale: 1,
-                duration: 0.6,
-                ease: "power4.out",
-            })
-        })
-    })
-}
+  if (typeof window === "undefined") return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const images = document.querySelectorAll("[data-animation='image']");
+
+  images.forEach((item) => {
+    gsap.set(item, {
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    });
+
+    gsap.to(item, {
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+      duration: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 70%",    
+        toggleActions: "play none none none", 
+       
+      },
+    });
+  });
+};

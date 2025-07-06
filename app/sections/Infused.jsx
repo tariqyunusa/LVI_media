@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
@@ -6,25 +6,36 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Styles from "../styles/sections/Infused.module.css";
 
 export default function Infused() {
-  const imageRef = useRef(null);
+  const containerRef = useRef(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      gsap.set(imageRef.current, {
+      const el = containerRef.current;
+      gsap.set(el, {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
         scale: 0.2,
-        yPercent: -68,
+        yPercent: -60,
+  
       });
 
-      gsap.to(imageRef.current, {
+      gsap.to(el, {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        duration: 1.2,
+        ease: "power2.out",
+        delay: 1.2,
+      });
+
+      gsap.to(el, {
         scale: 1,
         yPercent: 0,
+ 
         ease: "power2.out",
         scrollTrigger: {
-          trigger: imageRef.current,
-          start: "top +=500px",
-          end: "top +=100px",
+          trigger: el,
+          start: "top 80%",
+          end: "top 30%",
           scrub: true,
         },
       });
@@ -35,13 +46,14 @@ export default function Infused() {
 
   return (
     <section className={Styles.infused}>
-      <Image
-        src="/infused.png"
-        fill
-        alt="Infused section image"
-        className={Styles.infused__image}
-        ref={imageRef}
-      />
+      <div className={Styles.clipWrapper} ref={containerRef}>
+        <Image
+          src="/infused.png"
+          alt="Infused section image"
+          fill
+          className={Styles.infused__image}
+        />
+      </div>
     </section>
   );
 }

@@ -18,14 +18,14 @@ export default function Home() {
    <>
    <section className={styles.hero}>
     <main className={styles.hero__main}>
-      <h1 className={styles.hero__headline} >
-        We make cool videos for sport brands around the world <span /> 
+      <h1 className={styles.hero__headline} data-animation='paragraph' >
+        We make cool videos for sport brands around the world <div className={styles.ellipse} />
       </h1>
     </main>
     <div className={styles.hero__footer}>
-      <p className={styles.white__balance}>SHUTTER: 100</p>
-      <p className={styles.scroll__indicator}>Scroll to explore</p>
-      <div className={styles.audio__toggle}> <p className={styles.audio__indicator} >Audio:</p>  <button className={styles.audio__toggle_main}>{audio}</button></div>
+      <p className={styles.white__balance} data-animation='paragraph'>SHUTTER: 100</p>
+      <p className={styles.scroll__indicator} data-animation='paragraph'>Scroll to explore</p>
+      <div className={styles.audio__toggle}> <p className={styles.audio__indicator} data-animation='paragraph'>Audio:</p>  <button className={styles.audio__toggle_main}>{audio}</button></div>
     </div>
    </section>
     <Infused />

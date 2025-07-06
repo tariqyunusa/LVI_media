@@ -1,59 +1,44 @@
-import Splitting from "splitting";
-import { IO } from "./observe";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+import SplitText from "gsap/SplitText"; 
+gsap.registerPlugin(SplitText)
+import { IO } from "./observe"; 
 
 export const split = () => {
-    const paragraph = document.querySelectorAll("[data-animation='paragraph']")
-    const sideHeader = document.querySelectorAll("[data-animation='side-header']")
+  const paragraphs = document.querySelectorAll("[data-animation='paragraph']");
 
-    paragraph.forEach((item) => {
-        const line = Splitting({
-            target: item,
-            by: "lines",
-        });
-        line.forEach((splitResult) => {
-            const wrappedText = splitResult.words.map((words) => `<span class="text__mask">${words.outerHTML}</span>`).join("");
-            splitResult.el.innerHTML = wrappedText
-        })
+  paragraphs.forEach((el) => {
+    if (el.dataset.split === "true") return;
 
-        gsap.set(item.querySelectorAll(".word"), {
-            yPercent: 100,
-            opacity: 0,
-            transformStyle: "preserve-3d"
-        });
-        IO(item, { threshold: 0.8 }).then(() => {
-            const element = item.querySelectorAll(".word");
-            gsap.to(element, {
-                yPercent: 0,
-                opacity: 1,
-                stagger: element.length > 100 ? 0.02 : 0.03,
-                duration: element.length > 100 ? 0.65 : 0.75,
-                ease: "power4.out"
-            })
-        })
-    })
+    const splitInstance = new SplitText(el, {
+      type: "lines",
+      linesClass: "line",
+    });
 
-    sideHeader.forEach((item) => {
-        Splitting({
-            target: item,
-            by: "chars",
-        })
-        gsap.set(item.querySelectorAll(".char"), {
-            opacity: 0,
-            xPercent: 100,
-            transformStyle: "preserve-3d"
-        });
-        IO(item, {threshold: 1}).then(() => {
-            const element = item.querySelectorAll(".char");
-            gsap.to(element, {
-                opacity: 1,
-                xPercent: 0,
-                stagger: element.length > 100 ? 0.01 : 0.02,
-                duration: element.length > 100 ? 0.5 : 0.6,
-                ease: "power4.out"
-            })
-        })
-    })
-}
+    el.dataset.split = "true";
+
+    splitInstance.lines.forEach((line) => {
+      const wrapper = document.createElement("span");
+      wrapper.classList.add("text__wrap");
+
+      line.parentNode.insertBefore(wrapper, line);
+      wrapper.appendChild(line);
+    });
+
+    const targets = el.querySelectorAll(".text__wrap .line");
+
+    gsap.set(targets, {
+      yPercent: 100,
+      opacity: 0,
+    });
+
+    IO(el, { threshold: 0.8 }).then(() => {
+      gsap.to(targets, {
+        yPercent: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 1.2,
+        ease: "power4.out",
+      });
+    });
+  });
+};

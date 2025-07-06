@@ -22,6 +22,7 @@
     position: relative;
     width: 325px;
     height: 379px;
+    will-change: clip-path;
 }
 .Services__link{
     color: #080808;

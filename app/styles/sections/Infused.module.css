@@ -1,11 +1,18 @@
-.infused{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    padding: 2rem;
+.infused {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* padding: 2rem; */
 }
-.infused img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.clipWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  will-change: clip-path, transform;
+}
+
+.infused__image {
+  object-fit: cover;
 }

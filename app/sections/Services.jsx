@@ -6,29 +6,29 @@ export default function Services () {
             <div className={styles.services__border_top}/>
             <main className={styles.main__services}>
                 <div className={styles.main__left}>
-                    <div className={styles.main__services_image_wrapper}>
+                    <div className={styles.main__services_image_wrapper} data-animation='image'>
                         <Image src="/our_services.jpg" fill alt="our services image" />
                     </div>
-                    <a href="" className={styles.Services__link}>Our Service</a>
+                    <a href="" className={styles.Services__link} data-animation='paragraph'>Our Service</a>
                 </div>
             </main>
             <div  className={styles.services__border_between}/>
             <main className={styles.main__services}>
                <div className={styles.main__right}>
                  <div className={styles.main__right_header}>
-                    <p>Capabilities</p>
+                    <p data-animation='paragraph'>Capabilities</p>
                 </div>
                 <div className={styles.main__right_first_paragraph}>
-                    <p>Sound Design</p>
-                    <p>Storyboarding/Scriptwriting</p>
-                    <p>Color Correction/Grading</p>
-                    <p>Filming & Editing</p>
+                    <p data-animation='paragraph'>Sound Design</p>
+                    <p data-animation='paragraph'>Storyboarding/Scriptwriting</p>
+                    <p data-animation='paragraph'>Color Correction/Grading</p>
+                    <p data-animation='paragraph'>Filming & Editing</p>
                 </div>
                 <div  className={styles.main__right_second_paragraph}>
-                    <p>Commercial Ads</p>
-                    <p>Social Media Ads</p>
-                    <p>Promotional Contents</p>
-                    <p>Campaigns</p>
+                    <p data-animation='paragraph'>Commercial Ads</p>
+                    <p data-animation='paragraph'>Social Media Ads</p>
+                    <p data-animation='paragraph'>Promotional Contents</p>
+                    <p data-animation='paragraph'>Campaigns</p>
                 </div>
                </div>
             </main>

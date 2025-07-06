@@ -4,34 +4,34 @@ export default function Footer() {
     <footer className={styles.footer}>
       <main className={styles.footer__main_first}>
         <div className={styles.footer__headline}>
-          <h1 className={styles.headline_header}>
+          <h1 className={styles.headline_header} data-animation='paragraph'>
             Ready to start a project with us?
           </h1>
-          <h1 className={styles.headline_link}>
+          <h1 className={styles.headline_link} data-animation='paragraph'>
             <a href="">Shoot a mail</a>
           </h1>
         </div>
         <div className={styles.footer__main__links_first}>
           <div className={styles.footer__first_routes}>
             <div className={styles.footer__contact_us_first}>
-              <p>Contact us</p>
+              <p data-animation='paragraph'>Contact us</p>
             </div>
             <div className={styles.footer__routes_sections}>
-              <a href="">Home</a>
-              <a href="">About Us</a>
-              <a href="">Service</a>
-              <a href="">Contact Us</a>
+              <a href="" data-animation='paragraph'>Home</a>
+              <a href="" data-animation='paragraph'>About Us</a>
+              <a href="" data-animation='paragraph'>Service</a>
+              <a href="" data-animation='paragraph'>Contact Us</a>
             </div>
           </div>
           <div className={styles.footer__main__links_second}>
             <div className={styles.footer__socials}>
-              <a href="">Instagram</a>
-              <a href="">Vimeo</a>
-              <a href="">LinkedIn</a>
-              <a href="">Facebook</a>
+              <a href="" data-animation='paragraph'>Instagram</a>
+              <a href="" data-animation='paragraph'>Vimeo</a>
+              <a href="" data-animation='paragraph'>LinkedIn</a>
+              <a href="" data-animation='paragraph'>Facebook</a>
             </div>
             <div className={styles.BTP}>
-              <a href="">Back to top</a>
+              <a href="" data-animation='paragraph'>Back to top</a>
             </div>
           </div>
         </div>
@@ -39,14 +39,14 @@ export default function Footer() {
       <main className={styles.footer__main_second}>
       <div className={styles.footer__main_second_wrapper}>
           <div className={styles.footer__main_contact}>
-          <p>Address: 123 Jagun Jagun, Okokomaiko Lagos, Nigeria</p>
-          <p>Tel: +2348169945591<br/>Email: info@lvimedia.com</p>
+          <p data-animation='paragraph'>Address: 123 Jagun Jagun, Okokomaiko Lagos, Nigeria</p>
+          <p data-animation='paragraph'>Tel: +2348169945591<br/>Email: info@lvimedia.com</p>
         </div>
         <div className={styles.footer__main_footer}>
-            <p>All Right Reserved</p>
-            <p>3D Assets by Blender Swap</p>
-            <p>Designed by Frame 56 & Olamide</p>
-            <p>Dev by Tariq</p>
+            <p data-animation='paragraph'>All Right Reserved</p>
+            <p data-animation='paragraph'>3D Assets by Blender Swap</p>
+            <p data-animation='paragraph'>Designed by Frame 56 & Olamide</p>
+            <p data-animation='paragraph'>Dev by Tariq</p>
         </div>
       </div>
       </main>

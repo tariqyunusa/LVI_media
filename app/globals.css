@@ -8,13 +8,17 @@
   overflow: hidden;
 }
 
-.word {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
-  will-change: transform, opacity;
-  white-space: pre;
+.text__wrap {
+  display: block;
+  overflow: hidden;
 }
+
+.line {
+  display: inline-block;
+  will-change: transform;
+}
+
+
 
 body{
     overflow-x: hidden;
