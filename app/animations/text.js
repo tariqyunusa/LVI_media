@@ -31,7 +31,7 @@ export const split = () => {
       opacity: 0,
     });
 
-    IO(el, { threshold: 0.8 }).then(() => {
+    IO(el, { threshold: 0.4 }).then(() => {
       gsap.to(targets, {
         yPercent: 0,
         opacity: 1,

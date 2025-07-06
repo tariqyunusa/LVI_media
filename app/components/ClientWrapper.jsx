@@ -8,9 +8,13 @@ export default function ClientWrapper({ children }) {
     const runAnimations = async () => {
       const { split } = await import("../animations/text");
       const { revealImage } = await import("../animations/image");
+      const { fadeInElements } = await import("../animations/fade");
+      const { animateBars } = await import("../animations/bars");
 
       split();
       revealImage();
+      fadeInElements()
+      animateBars()
     };
 
     runAnimations();

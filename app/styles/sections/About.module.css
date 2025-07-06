@@ -126,11 +126,12 @@
 }
 .off__style{
     position: absolute;
-    width: 7.125rem;
-    padding: 0.5rem;
+    height: 1rem;
     background-color: #FF3104;
-    right: 18.5rem;
+    left: 30.1rem;
     bottom: 4.3rem;
+      transform-origin: left;
+  will-change: width;
 }
 .about__consumer_header h1{
     font-family: var(--font-schabo);

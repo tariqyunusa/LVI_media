@@ -30,11 +30,11 @@ export default function Header() {
 
   return (
     <nav className={styles.nav__header}>
-      <p className={styles.FPS}>FPS: {fps.toFixed(2)}</p>
-      <div className={styles.logo}>
+      <p className={styles.FPS} data-animation='paragraph'>FPS: {fps.toFixed(2)}</p>
+      <div className={styles.logo} data-animation='image'>
         <Image src='/logo.png' alt="LVI_logo" fill />
       </div>
-      <button className={styles.nav__cta_menu}>
+      <button className={styles.nav__cta_menu} data-animation="fade" >
         <div className={styles.indicator} />
         <div className={styles.nav__inner_menu}>menu</div>
       </button>

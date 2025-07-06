@@ -44,9 +44,9 @@ export default function About () {
             </main>
             <section className={styles.about__consumer_section}>
                 <div className={styles.about__consumer_main}>
-                    <div className={styles.about__consumer_headline}>
+                    <div className={styles.about__consumer_headline} data-animation="fade">
                         <span />
-                        <div className={styles.about__consumer_headline_main}>
+                        <div className={styles.about__consumer_headline_main} >
                             <p >Did you know?</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ export default function About () {
                         <h1 data-animation='paragraph'>
                             92% of consumers watch videos with the sound off
                         </h1>
-                        <div className={styles.off__style}/>
+                        <div className={styles.off__style} data-animation="bar"/>
                     </div>
                 </div>
             </section>
