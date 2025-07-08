@@ -31,16 +31,22 @@
   position: relative;
   margin: 0 auto;
 }
-.hero__headline .ellipse{
-    width: 0.9rem;
-    height: 0.9rem;
-    background-color: #FF0000;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    bottom: 2rem;
-    right: 15.1rem;
+ .ellipse__wrap {
+  position: relative;
+  display: inline-block;
 }
+
+.ellipse {
+  position: absolute;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #FF0000;
+  border-radius: 50%;
+  bottom: 2rem; 
+  right: -15%;
+  transform: translateX(-50%);
+}
+
 .hero__footer{
     width: 100%;
     display: flex;
@@ -82,8 +88,7 @@
         font-size: 0.5rem;
     }
     .hero__headline .ellipse{
-        bottom: 1rem;
-        right: 7rem;
+        bottom: 0.8rem;
         width: 0.5rem;
         height: 0.5rem;
     }
@@ -97,6 +102,8 @@
     }
     .hero__headline .ellipse{
         bottom: 1rem;
-        right: 12.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
     }
+    
 }

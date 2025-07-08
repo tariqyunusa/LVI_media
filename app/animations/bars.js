@@ -9,11 +9,11 @@ export const animateBars = () => {
 
   bars.forEach((bar) => {
     gsap.set(bar, {
-      width: "0rem",
+      scaleX: 0,
     });
 
     gsap.to(bar, {
-      width: "7.125rem", 
+      scaleX: 1, 
       duration: 1,
       ease: "power4.out",
       delay: 0.5,

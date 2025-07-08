@@ -103,3 +103,11 @@
         width: 93%;
     }
 }
+@media screen and (min-width:550px) and (max-width: 1024px) {
+       .Services_section{
+        height: 100vw;
+       }
+       .services__border_top, .services__border_bottom{
+        width: 93%;
+    }
+}

@@ -149,3 +149,17 @@
         font-size: 0.5rem;
     }
 }
+@media screen and (min-width:550px) and (max-width: 1024px) {
+    .footer__main_contact {
+        font-size: 2rem;
+    }
+    .footer__headline{
+        width: 100%;
+    }
+    .headline_header, .headline_link{
+        font-size: 6rem;
+    }
+    .headline_link{
+         font-size: 6rem;
+    }
+}
