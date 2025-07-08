@@ -14,7 +14,7 @@ export default function Footer() {
         <div className={styles.footer__main__links_first}>
           <div className={styles.footer__first_routes}>
             <div className={styles.footer__contact_us_first}>
-              <p data-animation='paragraph'>Contact us</p>
+              <p data-animation='paragraph' className={styles.cta}>Contact us</p>
             </div>
             <div className={styles.footer__routes_sections}>
               <a href="" data-animation='paragraph'>Home</a>

@@ -67,7 +67,7 @@ export default function Services() {
         </div>
       </main>
       <div className={styles.services__border_between} ref={betweenRef} />
-      <main className={styles.main__services}>
+      <main className={`${styles.main__services} ${styles.main__services__second}`}>
         <div className={styles.main__right}>
           <div className={styles.main__right_header}>
             <p data-animation="paragraph">Capabilities</p>

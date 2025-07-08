@@ -105,3 +105,47 @@
     font-weight: 400;
     color: #616161;
 }
+@media screen and (max-width: 550px){
+    .headline_header{
+        font-size: 3.5rem;
+    }
+    .headline_link{
+        font-size: 3.5rem;
+    }
+    .footer{
+        padding: 1rem;
+    }
+    .footer__headline{
+        width: 70%;
+    }
+    .footer__first_routes{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .footer__routes_sections a{
+        text-decoration: underline;
+    }
+    .BTP{
+        display: none;
+    }
+    .footer__socials{
+        justify-content: end;
+    }
+    .footer__socials a{
+        text-decoration: underline;
+    }
+    .cta{
+        font-size: 0.5rem;
+        text-transform: uppercase;
+    }
+    .footer__main_contact p{
+        font-size: 1.1rem;
+    }
+    .footer__main_second{
+        height: auto;
+        margin-top: 5rem;
+    }
+    .footer__main_footer p{
+        font-size: 0.5rem;
+    }
+}
