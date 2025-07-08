@@ -62,3 +62,29 @@
     font-size: 1rem;
     cursor: pointer;
 }
+@media screen and (max-width: 550px) {
+    .hero__headline{
+        font-size: 3rem;
+    }
+    .hero__main{
+        width: 70%;
+    }
+    .hero{
+        padding: 1rem;
+    }
+    .hero__main {
+        width: 100%;
+    }
+    .hero__footer{
+        font-size: 0.5rem;
+    }
+    .audio__toggle_main{
+        font-size: 0.5rem;
+    }
+    .hero__headline .ellipse{
+        bottom: 1rem;
+        right: 5.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+}

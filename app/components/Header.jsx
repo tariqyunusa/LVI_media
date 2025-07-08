@@ -1,10 +1,10 @@
-"use client"
+ "use client"
 import Image from "next/image"
 import styles from "../styles/Header.module.css"
 import { useEffect, useRef, useState } from "react"
 
 export default function Header() {
-  const frameRef = useRef()
+    const frameRef = useRef()
   const lastTimeRef = useRef(performance.now())
   const framesRef = useRef(0)
   const [fps, setFps] = useState(0)

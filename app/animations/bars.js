@@ -16,7 +16,7 @@ export const animateBars = () => {
       width: "7.125rem", 
       duration: 1,
       ease: "power4.out",
-      delay: 1,
+      delay: 0.5,
       scrollTrigger: {
         trigger: bar,
         start: "top 90%",
