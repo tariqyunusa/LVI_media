@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     padding:1rem  2rem;
-    /* height: 100vh; */
+    height: 100vh;
     position: relative;
 }
 .main__services{
@@ -73,6 +73,7 @@
         padding: 1rem ;
         flex-direction: column;
         gap: 3rem;
+        height: auto;
     }
     .services__border_between{
         display: none;

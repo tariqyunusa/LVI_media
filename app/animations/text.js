@@ -1,10 +1,9 @@
 import gsap from "gsap";
-import SplitText from "gsap/SplitText"; 
+import SplitText from "gsap/SplitText";
+import {IO} from './observe';
 gsap.registerPlugin(SplitText)
-import { IO } from "./observe"; 
-
-export const split = () => {
-  const paragraphs = document.querySelectorAll("[data-animation='paragraph']");
+export const split = (scope = document) => {
+  const paragraphs = scope.querySelectorAll("[data-animation='paragraph']");
 
   paragraphs.forEach((el) => {
     if (el.dataset.split === "true") return;
@@ -29,11 +28,13 @@ export const split = () => {
     gsap.set(targets, {
       yPercent: 100,
       opacity: 0,
+      visibility: "hidden"
     });
 
     IO(el, { threshold: 0.7 }).then(() => {
       gsap.to(targets, {
         yPercent: 0,
+        visibility: "visible",
         opacity: 1,
         stagger: 0.1,
         duration: 1.2,
@@ -42,3 +43,4 @@ export const split = () => {
     });
   });
 };
+

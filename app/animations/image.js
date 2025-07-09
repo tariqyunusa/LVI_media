@@ -11,10 +11,12 @@ export const revealImage = () => {
   images.forEach((item) => {
     gsap.set(item, {
       clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+      visibility: "hidden"
     });
 
     gsap.to(item, {
       clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+      visibility: "visible",
       duration: 1,
       ease: "power4.out",
       scrollTrigger: {
