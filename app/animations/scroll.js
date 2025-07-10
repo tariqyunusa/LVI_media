@@ -1,17 +1,19 @@
-import Lenis from 'lenis'
+import Lenis from 'lenis';
 
-export const scroll = () =>  {
-    const lenis = new Lenis({
-        duration: 1.6,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        infinite: false,
-        smooth: true,
-    });
+export const scroll = () => {
+  const lenis = new Lenis({
+    duration: 1.6,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    infinite: false,
+    smooth: true,
+  });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
+  window.lenisInstance = lenis;
 
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
-}
+  }
+
+  requestAnimationFrame(raf);
+};
