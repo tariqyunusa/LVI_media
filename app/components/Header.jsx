@@ -12,6 +12,8 @@ export default function Header() {
   const [fps, setFps] = useState(0);
   const [openNav, setOpenNav] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [activeLink, setActiveLink] = useState("Home");
+
 
   let lenis;
   useEffect(() => {
@@ -103,10 +105,12 @@ export default function Header() {
         <div className={styles.nav__links_container}>
           <div className={styles.nav__left_section}>
             <ul className={styles.nav__links_ul}>
-              {["Home", "Services", "About Us", "Contact"].map((link, i) => (
-                <li key={i}>
-                  <a href="#" className={styles.nav_link}>
-                    {link},
+              {["Home", "Services", "About Us", "Contact"].map((link, i, arr) => (
+                <li key={i} >
+                  <a href="#"  data-text={link} className={`${styles.nav_link} ${activeLink === link ? styles.active : ""}`} onClick={() => setActiveLink(link)}>
+                    {link}
+                    {i !== arr.length - 1 && ","}
+                    
                   </a>
                 </li>
               ))}
