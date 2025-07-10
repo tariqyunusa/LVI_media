@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import dynamic from "next/dynamic";
+
 
 export default function ClientWrapper({ children }) {
   useEffect(() => {
@@ -10,11 +10,13 @@ export default function ClientWrapper({ children }) {
       const { revealImage } = await import("../animations/image");
       const { fadeInElements } = await import("../animations/fade");
       const { animateBars } = await import("../animations/bars");
+      const { scroll } = await import("../animations/scroll")
 
       split();
       revealImage();
       fadeInElements()
       animateBars()
+      scroll()
     };
 
     runAnimations();
