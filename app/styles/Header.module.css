@@ -105,13 +105,12 @@
   font-size: 158px;
   color: #080808;
   text-transform: uppercase;
-
-    background-image: linear-gradient(to top, #080808 50%, #FF3104 50%);
+  background-image: linear-gradient(to top, #080808 50%, #ff3104 50%);
   background-size: 100% 200%;
   background-position: 0 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: background-position 0.5s ease;
+  transition: background-position 0.8s ease;
 }
 
 .nav__links_ul li a:hover {
@@ -120,8 +119,8 @@
 
 .nav__links_ul li a.active {
   background-image: none;
-  -webkit-text-fill-color: #FF3104;
-  color: #FF3104;
+  -webkit-text-fill-color: #ff3104;
+  color: #ff3104;
 }
 
 .nav__left__contact {

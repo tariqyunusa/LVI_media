@@ -4,6 +4,8 @@ import styles from "../styles/Header.module.css";
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
+import NavImage from "./NavImage";
+import { Canvas } from "@react-three/fiber";
 
 export default function Header() {
   const frameRef = useRef();
@@ -13,7 +15,7 @@ export default function Header() {
   const [openNav, setOpenNav] = useState(false);
   const [closing, setClosing] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
-
+  const [index, setIndex] = useState(0);
 
   let lenis;
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function Header() {
   }, []);
 
   if (typeof window !== "undefined") {
-    lenis = window.lenisInstance || null; 
+    lenis = window.lenisInstance || null;
   }
 
   useEffect(() => {
@@ -44,13 +46,13 @@ export default function Header() {
 
     if (openNav) {
       lenis.stop();
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
       lenis.start();
     }
 
     return () => {
-      lenis.start(); 
+      lenis.start();
     };
   }, [openNav]);
 
@@ -105,15 +107,33 @@ export default function Header() {
         <div className={styles.nav__links_container}>
           <div className={styles.nav__left_section}>
             <ul className={styles.nav__links_ul}>
-              {["Home", "Services", "About Us", "Contact"].map((link, i, arr) => (
-                <li key={i} >
-                  <a href="#"  data-text={link} className={`${styles.nav_link} ${activeLink === link ? styles.active : ""}`} onClick={() => setActiveLink(link)}>
-                    {link}
-                    {i !== arr.length - 1 && ","}
-                    
-                  </a>
-                </li>
-              ))}
+              {["Home", "Services", "About Us", "Contact"].map(
+                (link, i, arr) => (
+                  <li key={i}>
+                    <a
+                      href="#"
+                      data-text={link}
+                      className={`${styles.nav_link} ${
+                        activeLink === link ? styles.active : ""
+                      }`}
+                      onClick={() => setActiveLink(link)}
+                      onMouseEnter={() => setIndex(i)}
+                      onMouseLeave={() => {
+                        const activeIndex = [
+                          "Home",
+                          "Services",
+                          "About Us",
+                          "Contact",
+                        ].indexOf(activeLink);
+                        setIndex(activeIndex);
+                      }}
+                    >
+                      {link}
+                      {i !== arr.length - 1 && ","}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
             <div className={styles.nav__left__contact}>
               <p>Address: Via Nazionale, 184 00184 Roma, Italy</p>
@@ -123,12 +143,9 @@ export default function Header() {
 
           <div className={styles.nav__right_section}>
             <div className={styles.nav__left_image__wrapper}>
-              <Image
-                className={styles.nav__left_image}
-                src="/about_large.jpg"
-                fill
-                alt="nav hover image animation"
-              />
+              <Canvas>
+                <NavImage index={index} />
+              </Canvas>
             </div>
           </div>
         </div>
