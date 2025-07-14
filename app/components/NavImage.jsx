@@ -7,7 +7,8 @@ import gsap from "gsap";
 
 extend({ FadeImageMaterial });
 
-export default function NavImage({ index }) {
+export default function NavImage({ index, isHovered, planeRef }) {
+  const meshRef = useRef();
   const images = [
     "/nav/home.png",
     "/nav/services.png",
@@ -21,6 +22,12 @@ export default function NavImage({ index }) {
   const [currentIndex, setCurrentIndex] = useState(index);
   const [nextIndex, setNextIndex] = useState(index);
   const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+    if (planeRef) {
+      planeRef.current = meshRef.current;
+    }
+  }, [planeRef]);
 
   useEffect(() => {
     if (index === currentIndex) return;
@@ -52,16 +59,20 @@ export default function NavImage({ index }) {
   }, [index]);
 
   useFrame(({ clock }) => {
-    if (!materialRef.current) return;
+  if (!materialRef.current) return;
 
-    if (isAnimating) {
-      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
-    }
-  });
+  const uniforms = materialRef.current.uniforms;
+  if (isAnimating || isHovered) {
+    uniforms.uTime.value = clock.getElapsedTime();
+  }
+
+  uniforms.uDistort.value = isHovered ? 1 : 0;
+});
+
 
   return (
-    <mesh>
-      <planeGeometry args={[6, 7]} />
+    <mesh  ref={meshRef}>
+      <planeGeometry args={[6, 7, 64, 64]} />
       <fadeImageMaterial
         ref={materialRef}
         uTexture1={textures[currentIndex]}

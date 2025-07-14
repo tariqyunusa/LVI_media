@@ -52,7 +52,7 @@
 }
 .services__border_top, .services__border_bottom{
     width: 96%;
-    height: 1px;
+    height: 1.5px;
     background-color: #000000;
     position: absolute;
     transform: scaleX(0);
@@ -62,7 +62,7 @@
     bottom: 16px;
 }
 .services__border_between{
-    width: 1px;
+    width: 1.5px;
     height: 100%;
     background-color: #000000;
       transform: scaleY(0);
