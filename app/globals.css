@@ -26,6 +26,6 @@ img{
   height: 100%;
   object-fit: cover;
 }
-[data-animation="paragraph"] .text__wrap .line {
+[data-animation="nav-paragraph"] .text__wrap .line {
   visibility: hidden;
 }

@@ -174,8 +174,8 @@ export default function Header() {
               )}
             </ul>
             <div className={styles.nav__left__contact}>
-              <p data-animation="paragraph">Address: Via Nazionale, 184 00184 Roma, Italy</p>
-              <p data-animation="paragraph">
+              <p data-animation="nav-paragraph">Address: Via Nazionale, 184 00184 Roma, Italy</p>
+              <p data-animation="nav-paragraph">
                 Tel: +2348169945591
                 <br /> Email: info@lvimedia.com
               </p>

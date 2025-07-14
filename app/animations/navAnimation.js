@@ -31,7 +31,7 @@ export const animateNavigation = ({ state, refs, onComplete }) => {
     timelineRef.current.to(planeRef.current.material.uniforms.uOpacity, {
       value: 1,
       delay: 0.5,
-      duration: 1,
+      duration: 1.6,
       ease: "power2.out",
     });
 
@@ -59,11 +59,7 @@ export const animateNavigation = ({ state, refs, onComplete }) => {
       },
       "-=0.8"
     );
-    timelineRef.current.call(() => {
-  setTimeout(() => {
     splitNavParagraphs(document);
-  }, 50);
-});
   }
 
   if (closing) {
