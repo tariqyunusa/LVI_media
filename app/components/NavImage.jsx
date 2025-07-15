@@ -10,10 +10,10 @@ extend({ FadeImageMaterial });
 export default function NavImage({ index, isHovered, planeRef }) {
   const meshRef = useRef();
   const images = [
-    "/nav/home.png",
-    "/nav/services.png",
-    "/nav/about.png",
-    "/nav/contact.png",
+    "/nav/home.webp",
+    "/nav/services.webp",
+    "/nav/about.webp",
+    "/nav/contact.webp",
   ];
 
   const textures = useLoader(THREE.TextureLoader, images);
