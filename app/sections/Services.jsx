@@ -55,7 +55,7 @@ export default function Services() {
             className={styles.main__services_image_wrapper}
             data-animation="image"
           >
-            <Image src="/our_services.jpg" fill alt="our services image" />
+            <Image src="/our_services.webp" fill alt="our services image" />
           </div>
           <a
             href=""

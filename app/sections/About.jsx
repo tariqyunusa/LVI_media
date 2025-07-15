@@ -44,7 +44,7 @@ export default function About() {
         <div className={styles.about__image_container}>
           <div className={styles.about__image_little} data-animation="image">
             <Image
-              src="/about_little.jpg"
+              src="/about_little.webp"
               alt="a director holding a camera"
               fill
               className={styles.image_little}
@@ -52,7 +52,7 @@ export default function About() {
           </div>
           <div className={styles.about__image_large} data-animation="image">
             <Image
-              src="/about_large.jpg"
+              src="/about_large.webp"
               alt="a person holding a camera"
               fill
               className={styles.image_large}
