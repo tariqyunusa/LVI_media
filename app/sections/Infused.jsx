@@ -47,12 +47,7 @@ export default function Infused() {
   return (
     <section className={Styles.infused}>
       <div className={Styles.clipWrapper} ref={containerRef}>
-        <Image
-          src="/infused.png"
-          alt="Infused section image"
-          fill
-          className={Styles.infused__image}
-        />
+        <video src="/Nike_ad.webm"  autoPlay muted playsInline loop />
       </div>
     </section>
   );

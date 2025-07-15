@@ -1,14 +1,30 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, useRef } from "react";
 import Infused from "./sections/Infused";
 import About from "./sections/About";
 import Services from "./sections/Services";
 import Marquee from "./components/Marquee";
 
 export default function Home() {
-  const [audio, setAudio] = useState("off");
+  const [audioState, setAudioState] = useState("off");
+  const audioRef = useRef(null);
+
+  const toggleAudio = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/Nike.m4a");
+      audioRef.current.loop = true; 
+    }
+
+    if (audioRef.current.paused) {
+      audioRef.current.play();
+      setAudioState("on");
+    } else {
+      audioRef.current.pause();
+      setAudioState("off");
+    }
+  };
 
   return (
     <>
@@ -34,7 +50,7 @@ export default function Home() {
             <p className={styles.audio__indicator} data-animation="paragraph">
               Audio:
             </p>{" "}
-            <button className={styles.audio__toggle_main}>{audio}</button>
+            <button className={styles.audio__toggle_main} onClick={toggleAudio}>{audioState}</button>
           </div>
         </div>
       </section>
