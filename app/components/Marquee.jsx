@@ -53,7 +53,7 @@ export default function Marquee() {
               }}
             >
               <Image
-                src={`/logo${id}.jpg`}
+                src={`/logo${id}.webp`}
                 alt={`sponsor logo ${id}`}
                 fill
                 className={styles.logoImage}

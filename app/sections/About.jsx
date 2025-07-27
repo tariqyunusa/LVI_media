@@ -1,12 +1,8 @@
 import styles from "../styles/sections/About.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
-import { revealImage } from "../animations/image";
 export default function About() {
-  // useEffect(() => {
-  //     revealImage()
-  // },[])
+
   return (
     <section className={styles.about__section}>
       <main className={styles.about__main__first}>
@@ -79,8 +75,6 @@ export default function About() {
                 <span className={styles.off__style} data-animation="bar" />
               </span>
             </h1>
-
-            {/* <div className={styles.off__style} data-animation="bar" /> */}
           </div>
         </div>
       </section>
