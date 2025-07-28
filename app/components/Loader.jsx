@@ -23,10 +23,10 @@ export default function Loader({ onComplete }) {
   const [fakeProgress, setFakeProgress] = useState(0);
 
   useLayoutEffect(() => {
-    // Initialize loader bar
+   
     gsap.set(containerRef.current, { width: "0%" });
 
-    // Animate loader bar and image reveal
+
     gsap.to(containerRef.current, {
       width: "100%",
       duration: 1,
@@ -58,7 +58,7 @@ export default function Loader({ onComplete }) {
       },
     });
 
-    // Custom progress steps
+
     const progressSteps = [22, 39, 53, 80, 100];
     let stepIndex = 0;
 
@@ -69,12 +69,10 @@ export default function Loader({ onComplete }) {
       if (stepIndex >= progressSteps.length) {
         clearInterval(stepInterval);
       }
-    }, 400); // Adjust speed of progress steps here
+    }, 900);
 
     return () => clearInterval(stepInterval);
   }, []);
-
-  // Animate image transition on currentImage change
   useLayoutEffect(() => {
     if (imageRefs.current[currentImage]) {
       gsap.fromTo(
