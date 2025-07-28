@@ -29,3 +29,10 @@ img{
 [data-animation="nav-paragraph"] .text__wrap .line {
   visibility: hidden;
 }
+[data-animation="paragraph"] {
+  visibility: hidden;
+}
+
+[data-animation='fade'] {
+   visibility: hidden;
+}
