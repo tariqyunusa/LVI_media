@@ -32,8 +32,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${spaceMono.variable} ${manrope.variable} ${schabo.variable}`}>
+        
+       <ClientWrapper>
         <Header />
-       <ClientWrapper> {children}</ClientWrapper>
+         {children}
+         </ClientWrapper>
        <Footer />
       </body>
     </html>
