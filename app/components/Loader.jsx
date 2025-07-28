@@ -16,28 +16,30 @@ export default function Loader({ onComplete }) {
 
   const containerRef = useRef(null);
   const counterRef = useRef(null);
+  const imageRefs = useRef([]);
 
   const [currentImage, setCurrentImage] = useState(0);
   const [prevImage, setPrevImage] = useState(null);
-  const imageRefs = useRef([]);
   const [fakeProgress, setFakeProgress] = useState(0);
 
   useLayoutEffect(() => {
+    // Initialize loader bar
     gsap.set(containerRef.current, { width: "0%" });
 
+    // Animate loader bar and image reveal
     gsap.to(containerRef.current, {
       width: "100%",
       duration: 1,
-      delay: 1,
+      delay: 1.5,
       ease: "power4.inOut",
       onComplete: () => {
         let index = 0;
-        const interval = setInterval(() => {
+        const imageInterval = setInterval(() => {
           setPrevImage(index);
           index += 1;
 
           if (index >= images.length) {
-            clearInterval(interval);
+            clearInterval(imageInterval);
             setTimeout(() => {
               gsap.to([containerRef.current.parentElement, counterRef.current], {
                 opacity: 0,
@@ -55,16 +57,24 @@ export default function Loader({ onComplete }) {
         }, 600);
       },
     });
-    let counter = 0;
-    const progressInterval = setInterval(() => {
-      counter += 1;
-      setFakeProgress(counter);
-      if (counter >= 100) clearInterval(progressInterval);
-    }, 60);
 
-    return () => clearInterval(progressInterval);
+    // Custom progress steps
+    const progressSteps = [22, 39, 53, 80, 100];
+    let stepIndex = 0;
+
+    const stepInterval = setInterval(() => {
+      setFakeProgress(progressSteps[stepIndex]);
+      stepIndex++;
+
+      if (stepIndex >= progressSteps.length) {
+        clearInterval(stepInterval);
+      }
+    }, 400); // Adjust speed of progress steps here
+
+    return () => clearInterval(stepInterval);
   }, []);
 
+  // Animate image transition on currentImage change
   useLayoutEffect(() => {
     if (imageRefs.current[currentImage]) {
       gsap.fromTo(
@@ -118,11 +128,9 @@ export default function Loader({ onComplete }) {
           </div>
           <h1>STUDIO</h1>
         </div>
+
         <div className={styles.loader__container_bottom} ref={counterRef}>
-          <h2>
-            0{fakeProgress < 10 ? 0 : ""}
-            {fakeProgress}
-          </h2>
+          <h2>{fakeProgress.toString().padStart(3, "0")}</h2>
           <h2>100</h2>
         </div>
       </main>
