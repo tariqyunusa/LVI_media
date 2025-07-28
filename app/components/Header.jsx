@@ -106,16 +106,17 @@ export default function Header() {
   const TopHeader = () => (
     <div className={styles.top__nav_header}>
       <div className={styles.top__nav_header__inner}>
-        <p className={styles.FPS} ref={fpsRef}>
+        <p className={styles.FPS} ref={fpsRef} >
           FPS: {fps.toFixed(2)}
         </p>
-        <div className={styles.logo} ref={logoRef}>
+        <div className={styles.logo} ref={logoRef} >
           <Image src="/logo.png" alt="LVI_logo" fill />
         </div>
         <button
           className={styles.nav__cta_menu}
           onClick={handleToggleNav}
           ref={buttonRef}
+         
         >
           <div className={styles.indicator} />
           <div className={styles.nav__inner_menu}>

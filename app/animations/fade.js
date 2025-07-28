@@ -12,11 +12,13 @@ export const fadeInElements = () => {
     gsap.set(el, {
       opacity: 0,
       y: 50, 
+      visibility: "hidden"
     });
 
     gsap.to(el, {
       opacity: 1,
       y: 0,
+      visibility: "visible",
       duration: 1,
       ease: "power4.out",
       scrollTrigger: {

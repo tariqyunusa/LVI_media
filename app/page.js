@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useLayoutEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Infused from "./sections/Infused";
 import About from "./sections/About";
 import Services from "./sections/Services";
